@@ -1,0 +1,184 @@
+:root{
+  --bg-main:#050407;
+  --bg-card:rgba(18,7,12,0.95);
+  --gold:#facc15;
+  --ember:#fb7185;
+  --plum:#c084fc;
+  --text-main:#fdf2f8;
+  --text-muted:#d1b2be;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top,#1a060c,#050407),
+    linear-gradient(120deg,#000,#15040a);
+  color:var(--text-main);
+}
+
+/* Elite Glass Card */
+.a{
+  max-width:1150px;
+  margin:70px auto;
+  background:var(--bg-card);
+  padding:50px;
+  border-radius:28px;
+  backdrop-filter:blur(22px);
+  box-shadow:
+    0 0 60px rgba(250,204,21,0.15),
+    0 0 120px rgba(251,113,133,0.08);
+  border:1px solid rgba(250,204,21,0.2);
+  position:relative;
+  overflow:hidden;
+}
+
+.a::before{
+  content:'';
+  position:absolute;
+  top:-100%;
+  left:-100%;
+  width:200%;
+  height:200%;
+  background:linear-gradient(45deg,
+      transparent 40%,
+      rgba(250,204,21,0.25),
+      transparent 60%);
+  animation:shine 7s linear infinite;
+}
+
+
+@keyframes shine{
+  from{transform:translate(-50%,-50%);}
+  to{transform:translate(50%,50%);}
+}
+
+
+/* Header */
+.b{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  z-index:1;
+}
+
+.b h2{
+  font-size:28px;
+  letter-spacing:2px;
+  background:linear-gradient(45deg,var(--gold),var(--ember),var(--plum));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* Menu */
+.menu{
+  display:flex;
+  gap:30px;
+}
+
+.menu a{
+  text-decoration:none;
+  color:var(--text-muted);
+  font-weight:500;
+  position:relative;
+}
+
+.menu a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  left:0;
+  bottom:-6px;
+  background:linear-gradient(45deg,var(--gold),var(--ember));
+  transition:.4s;
+}
+
+.menu a:hover::after{ width:100%; }
+.menu a:hover{ color:var(--text-main); }
+
+hr{
+  margin:32px 0;
+  border:1px solid rgba(250,204,21,0.2);
+}
+
+/* Hero Content */
+.content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:45px;
+  position:relative;
+  z-index:1;
+}
+
+.my h3{ color:var(--text-muted); }
+
+.my h2{
+  font-size:48px;
+  margin:10px 0;
+  background:linear-gradient(45deg,var(--gold),var(--ember));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.about{
+  margin-top:18px;
+  max-width:650px;
+  line-height:1.9;
+  color:var(--text-muted);
+}
+
+/* Royal Avatar */
+.image-bg{
+  padding:16px;
+  border-radius:50%;
+  background:conic-gradient(from 0deg,var(--gold),var(--ember),var(--plum),var(--gold));
+  box-shadow:
+    0 0 50px rgba(250,204,21,.5),
+    0 0 90px rgba(251,113,133,.35);
+}
+
+.image-bg img{
+  width:270px;
+  height:270px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* Social Icons */
+.social{
+  margin-top:55px;
+  display:flex;
+  justify-content:center;
+  gap:32px;
+  position:relative;
+  z-index:1;
+}
+
+.social a{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(250,204,21,0.3);
+  transition:.35s;
+}
+
+.social a:hover{
+  background:linear-gradient(45deg,var(--gold),var(--ember));
+  transform:translateY(-9px) scale(1.08);
+  box-shadow:
+    0 0 25px rgba(250,204,21,.6),
+    0 0 45px rgba(251,113,133,.5);
+}
